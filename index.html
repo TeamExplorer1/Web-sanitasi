@@ -5,72 +5,79 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TeamExplorer - Tim Explorer Sanitasi Air</title>
     <style>
+        /* Variabel CSS untuk kemudahan tema */
         :root {
-            --primary: #1a73e8;
-            --secondary: #0d47a1;
-            --accent: #00bcd4;
-            --light: #e3f2fd;
-            --dark: #0d2c54;
+            --primary: #1a73e8; /* Biru Google */
+            --secondary: #0d47a1; /* Biru Tua */
+            --accent: #00bcd4; /* Cyan */
+            --light: #e3f2fd; /* Biru Sangat Muda */
+            --dark: #0d2c54; /* Biru Paling Tua */
             --success: #4caf50;
             --warning: #ff9800;
             --danger: #f44336;
         }
-        
+
+        /* Reset Dasar */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: #f5f9ff;
             color: #333;
             line-height: 1.6;
+            scroll-behavior: smooth; /* Tambahan: Untuk smooth scrolling ke section */
         }
-        
+
+        /* Header */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
             padding: 1rem 0;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky; /* Tambahan: Membuat header tetap di atas */
+            top: 0;
+            z-index: 1000;
         }
-        
+
         .container {
             width: 90%;
             max-width: 1200px;
             margin: 0 auto;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-        
+
         #custom-logo {
             max-height: 60px;
             max-width: 200px;
             transition: all 0.3s ease;
         }
-        
+
         .logo-text {
             font-size: 1.8rem;
             font-weight: 700;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
             gap: 25px;
         }
-        
+
         nav a {
             color: white;
             text-decoration: none;
@@ -79,31 +86,33 @@
             padding: 5px 10px;
             border-radius: 4px;
         }
-        
+
         nav a:hover {
             background-color: rgba(255, 255, 255, 0.2);
         }
-        
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(13, 44, 84, 0.8), rgba(13, 44, 84, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            /* Perbaiki URL jika tidak ada gambar lokal, atau biarkan jika ada */
+            background: linear-gradient(rgba(13, 44, 84, 0.8), rgba(13, 44, 84, 0.9)), url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); 
             background-size: cover;
             background-position: center;
             color: white;
-            padding: 5rem 0;
+            padding: 8rem 0; /* Sedikit lebih tinggi */
             text-align: center;
         }
-        
+
         .hero h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
         }
-        
+
         .hero p {
             font-size: 1.2rem;
             max-width: 700px;
             margin: 0 auto 2rem;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: var(--accent);
@@ -115,42 +124,48 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            text-transform: uppercase; /* Tambahan: Penekanan tombol */
         }
-        
+
         .btn:hover {
             background-color: #0097a7;
             transform: translateY(-3px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
         }
-        
+
+        /* Section Umum */
         section {
             padding: 5rem 0;
         }
-        
+
         .section-title {
             text-align: center;
             margin-bottom: 3rem;
             color: var(--dark);
         }
-        
+
         .section-title h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
+            border-bottom: 3px solid var(--accent); /* Tambahan: Garis bawah estetika */
+            display: inline-block;
+            padding-bottom: 5px;
         }
-        
+
         .section-title p {
             font-size: 1.1rem;
             max-width: 700px;
             margin: 0 auto;
             color: #666;
         }
-        
+
+        /* Features Section */
         .features {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Sedikit lebih kecil agar lebih fleksibel */
             gap: 30px;
         }
-        
+
         .feature-card {
             background-color: white;
             border-radius: 10px;
@@ -158,34 +173,36 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
             text-align: center;
+            border-top: 5px solid var(--primary); /* Tambahan: Garis pembeda */
         }
-        
+
         .feature-card:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         .feature-icon {
             font-size: 3rem;
             color: var(--primary);
             margin-bottom: 20px;
         }
-        
+
         .feature-card h3 {
             margin-bottom: 15px;
             color: var(--dark);
         }
-        
+
+        /* Team Section */
         .team {
             background-color: var(--light);
         }
-        
+
         .team-members {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Lebih responsif */
             gap: 30px;
         }
-        
+
         .member-card {
             background-color: white;
             border-radius: 10px;
@@ -193,74 +210,82 @@
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
-        
+
         .member-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        
+
         .member-img {
             height: 250px;
             background-color: #ddd;
             background-size: cover;
             background-position: center;
         }
-        
+
         .member-info {
             padding: 20px;
             text-align: center;
         }
-        
+
         .member-info h3 {
             margin-bottom: 5px;
             color: var(--dark);
         }
-        
+
         .member-info p {
             color: #666;
             font-style: italic;
         }
-        
+
+        /* Projects Section */
         .projects {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-        
+
         .project-card {
             background-color: white;
             border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease; /* Tambahan: Transisi hover */
         }
         
+        .project-card:hover {
+            transform: scale(1.02);
+        }
+
         .project-img {
             height: 200px;
             background-color: #ddd;
             background-size: cover;
             background-position: center;
         }
-        
+
         .project-info {
             padding: 20px;
         }
-        
+
         .project-info h3 {
             margin-bottom: 10px;
             color: var(--dark);
         }
-        
+
+        /* Owner Panel */
         .owner-panel {
             background-color: var(--dark);
             color: white;
             padding: 2rem 0;
         }
-        
+
         .owner-panel h3 {
             text-align: center;
             margin-bottom: 1.5rem;
+            color: var(--accent); /* Tambahan: Beri warna accent */
         }
-        
+
         .owner-controls {
             display: flex;
             flex-wrap: wrap;
@@ -268,47 +293,64 @@
             justify-content: center;
             align-items: center;
         }
-        
+
         .owner-controls input, .owner-controls button {
             padding: 10px 15px;
             border-radius: 5px;
             border: none;
         }
-        
+
         .owner-controls input {
             flex-grow: 1;
             max-width: 300px;
         }
         
+        .owner-controls button {
+            /* Mengubah warna tombol di panel owner untuk membedakan */
+            background-color: var(--primary); 
+        }
+
+        .owner-controls button#reset-logo {
+            background-color: var(--danger);
+        }
+        
+        .owner-controls button:hover {
+            filter: brightness(1.2);
+            transform: none; /* Nonaktifkan transfrom tombol default */
+        }
+
+
+        /* Footer */
         footer {
             background-color: var(--dark);
             color: white;
             padding: 3rem 0 1rem;
         }
-        
+
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 2rem;
         }
-        
+
         .footer-column h3 {
             margin-bottom: 1.5rem;
             font-size: 1.2rem;
+            color: var(--accent); /* Tambahan: Beri warna accent */
         }
-        
+
         .footer-column p, .footer-column a {
             color: #ccc;
             margin-bottom: 10px;
             display: block;
             text-decoration: none;
         }
-        
+
         .footer-column a:hover {
             color: white;
         }
-        
+
         .copyright {
             text-align: center;
             padding-top: 2rem;
@@ -316,19 +358,38 @@
             color: #aaa;
             font-size: 0.9rem;
         }
-        
+
+        /* Media Queries untuk Responsif */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 15px;
             }
-            
+
             nav ul {
                 gap: 15px;
             }
-            
+
             .hero h1 {
                 font-size: 2.2rem;
+            }
+            
+            .hero {
+                padding: 6rem 0;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+        @media (max-width: 480px) {
+            .owner-controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .owner-controls input, .owner-controls button {
+                width: 100%;
+                max-width: none;
             }
         }
     </style>
@@ -338,7 +399,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <img id="custom-logo" src=logo.png" alt="Logo TeamExplorer">
+                    <img id="custom-logo" src="https://via.placeholder.com/200x60/1a73e8/ffffff?text=TeamExplorer" alt="Logo TeamExplorer">
                     <div class="logo-text">TeamExplorer</div>
                 </div>
                 <nav>
@@ -396,28 +457,28 @@
             </div>
             <div class="team-members">
                 <div class="member-card">
-                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFuJTIwaGVhZHNob3R8fHx8fHwxNjcwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="member-info">
                         <h3>Alexandra Wijaya</h3>
                         <p>Lead Hydrologist</p>
                     </div>
                 </div>
                 <div class="member-card">
-                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616b612b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1494790108755-2616b612b786?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8d29tYW4lMjBoZWFkc2hvdHwxNjcwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="member-info">
                         <h3>Sarah Chen</h3>
                         <p>Environmental Engineer</p>
                     </div>
                 </div>
                 <div class="member-card">
-                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80');"></div>
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8bWFuJTIwZmFjZXx8fHx8fDE2NzAwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="member-info">
                         <h3>Michael Santoso</h3>
                         <p>Water Treatment Specialist</p>
                     </div>
                 </div>
                 <div class="member-card">
-                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80');"></div>
+                    <div class="member-img" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8Z2lybCUyMGZhY2V8fHx8fHwxNjcwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="member-info">
                         <h3>Diana Putri</h3>
                         <p>Community Outreach Coordinator</p>
@@ -435,21 +496,21 @@
             </div>
             <div class="projects">
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8d2F0ZXIlMjBmaWx0cmF0aW9ufHx8fHwxNjcwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="project-info">
                         <h3>Sistem Filtrasi Desa Terpencil</h3>
                         <p>Mengimplementasikan sistem filtrasi air sederhana di desa-desa terpencil dengan sumber daya lokal.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1564419320461-6870880331c6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1564419320461-6870880331c6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8cml2ZXIlMjBwb2xsdXRpb258fHx8fHwxNjcwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="project-info">
                         <h3>Pemantauan Kualitas Air Sungai</h3>
                         <p>Program pemantauan berkelanjutan untuk kualitas air sungai di daerah perkotaan.</p>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1570804439979-801c5a6cac75?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');"></div>
+                    <div class="project-img" style="background-image: url('https://images.unsplash.com/photo-1570804439979-801c5a6cac75?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&ixid=MnwxfDB8MXxyYW5kb218MHx8c2FuaXRhdGlvbiUyMGVkdWNhdGlvbnx8fHx8fDE2NzAwMDAwMDAw&ixlib=rb-4.0.3&q=80&w=400');"></div>
                     <div class="project-info">
                         <h3>Edukasi Sanitasi Sekolah</h3>
                         <p>Program edukasi tentang pentingnya sanitasi air bersih untuk siswa sekolah dasar.</p>
@@ -498,11 +559,17 @@
     </footer>
 
     <script>
+        // Default logo URL (yang digunakan jika tidak ada yang disimpan)
+        const DEFAULT_LOGO_URL = 'https://via.placeholder.com/200x60/1a73e8/ffffff?text=TeamExplorer';
+
         // Fungsi untuk mengupdate logo
         document.getElementById('update-logo').addEventListener('click', function() {
-            const logoUrl = document.getElementById('logo-url').value;
+            const logoUrlInput = document.getElementById('logo-url');
+            const logoUrl = logoUrlInput.value.trim(); // Gunakan trim() untuk membersihkan spasi
+            const customLogo = document.getElementById('custom-logo');
+
             if (logoUrl) {
-                document.getElementById('custom-logo').src = logoUrl;
+                customLogo.src = logoUrl;
                 // Simpan ke localStorage
                 localStorage.setItem('customLogo', logoUrl);
                 alert('Logo berhasil diupdate!');
@@ -510,23 +577,31 @@
                 alert('Silakan masukkan URL gambar yang valid.');
             }
         });
-        
+
         // Fungsi untuk reset logo
         document.getElementById('reset-logo').addEventListener('click', function() {
-            const defaultLogo = 'https://via.placeholder.com/200x60/1a73e8/ffffff?text=TeamExplorer';
-            document.getElementById('custom-logo').src = defaultLogo;
-            document.getElementById('logo-url').value = '';
+            const customLogo = document.getElementById('custom-logo');
+            const logoUrlInput = document.getElementById('logo-url');
+
+            customLogo.src = DEFAULT_LOGO_URL;
+            logoUrlInput.value = '';
             // Hapus dari localStorage
             localStorage.removeItem('customLogo');
             alert('Logo telah direset ke default.');
         });
-        
+
         // Cek apakah ada logo yang disimpan di localStorage saat halaman dimuat
         window.addEventListener('DOMContentLoaded', function() {
             const savedLogo = localStorage.getItem('customLogo');
-            if (savedLogo) {
-                document.getElementById('custom-logo').src = savedLogo;
-                document.getElementById('logo-url').value = savedLogo;
+            const customLogo = document.getElementById('custom-logo');
+            const logoUrlInput = document.getElementById('logo-url');
+
+            // Set logo default jika tidak ada yang disimpan
+            if (!savedLogo) {
+                customLogo.src = DEFAULT_LOGO_URL;
+            } else {
+                customLogo.src = savedLogo;
+                logoUrlInput.value = savedLogo;
             }
         });
     </script>
