@@ -129,22 +129,6 @@
       padding: 5rem 0;
     }
 
-    .about h2,
-    .team h2,
-    .projects h2 {
-      text-align: center;
-      font-size: 2.5rem;
-      color: var(--dark);
-      margin-bottom: 2rem;
-    }
-
-    .about p {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto;
-    }
-
-    /* === TIM === */
     .team {
       background-color: var(--light);
     }
@@ -158,10 +142,9 @@
     .team-member {
       background-color: white;
       border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       text-align: center;
-      padding-bottom: 20px;
+      padding: 20px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
     }
 
@@ -172,45 +155,34 @@
 
     .team-member img {
       width: 100%;
-      height: 250px;
-      object-fit: cover;
+      max-width: 200px;
+      border-radius: 50%;
+      margin-bottom: 15px;
     }
 
     .team-member h3 {
-      margin-top: 15px;
       color: var(--dark);
+      margin-bottom: 5px;
     }
 
-    .team-member p {
-      color: #555;
-    }
-
-    /* === PROGRAM KERJA === */
-    .project-grid {
+    .projects {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
 
     .project-card {
       background-color: white;
       border-radius: 10px;
-      padding: 30px;
+      padding: 25px;
       box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s ease;
+      transition: transform 0.3s ease;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      transform: scale(1.03);
     }
 
-    .project-card h3 {
-      color: var(--primary);
-      margin-bottom: 10px;
-    }
-
-    /* === FOOTER === */
     footer {
       background-color: var(--dark);
       color: white;
@@ -225,13 +197,15 @@
     }
 
     .footer-section h3 {
-      margin-bottom: 1rem;
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
       color: var(--accent);
     }
 
-    .footer-section p,
-    .footer-section a {
+    .footer-section p, .footer-section a {
       color: #ccc;
+      margin-bottom: 10px;
+      display: block;
       text-decoration: none;
     }
 
@@ -241,8 +215,8 @@
 
     .footer-bottom {
       text-align: center;
+      padding-top: 1.5rem;
       border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 1rem;
       color: #aaa;
       font-size: 0.9rem;
     }
@@ -257,129 +231,121 @@
 </head>
 <body>
 
-  <!-- HEADER -->
-  <header>
-    <div class="container">
-      <div class="header-content">
-        <div class="logo-container">
-          <img id="custom-logo" src="logo-teamexplorer.png" alt="Logo TeamExplorer">
-          <div class="logo-text">TeamExplorer</div>
-        </div>
-        <nav>
-          <ul>
-            <li><a href="#home">Beranda</a></li>
-            <li><a href="#about">Tentang</a></li>
-            <li><a href="#team">Tim</a></li>
-            <li><a href="#projects">Program Kerja</a></li>
-            <li><a href="#contact">Kontak</a></li>
-          </ul>
-        </nav>
+<header>
+  <div class="container">
+    <div class="header-content">
+      <div class="logo-container">
+        <img id="custom-logo" src="logo-teamexplorer.png" alt="Logo TeamExplorer">
+        <div class="logo-text">TeamExplorer</div>
       </div>
+      <nav>
+        <ul>
+          <li><a href="#home">Beranda</a></li>
+          <li><a href="#about">Tentang</a></li>
+          <li><a href="#team">Tim</a></li>
+          <li><a href="#projects">Program Kerja</a></li>
+          <li><a href="#contact">Kontak</a></li>
+        </ul>
+      </nav>
     </div>
-  </header>
+  </div>
+</header>
 
-  <!-- HERO -->
-  <section id="home" class="hero">
-    <div class="container">
-      <h1>Selamat Datang di TeamExplorer</h1>
-      <p>Tim eksplorasi dan inovasi sanitasi air untuk masa depan yang lebih bersih.</p>
-      <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
-    </div>
-  </section>
+<!-- Hero -->
+<section id="home" class="hero">
+  <div class="container">
+    <h1>Selamat Datang di TeamExplorer</h1>
+    <p>Tim eksplorasi dan inovasi sanitasi air untuk masa depan yang lebih bersih.</p>
+    <a href="#about" class="btn">Pelajari Lebih Lanjut</a>
+  </div>
+</section>
 
-  <!-- TENTANG -->
-  <section id="about" class="about">
-    <div class="container">
-      <h2>Tentang Kami</h2>
-      <p>TeamExplorer merupakan kelompok yang berfokus pada pengembangan dan inovasi dalam bidang sanitasi air bersih di lingkungan masyarakat. Kami berkomitmen menciptakan solusi efektif, berkelanjutan, dan ramah lingkungan.</p>
-    </div>
-  </section>
+<!-- Tentang -->
+<section id="about" class="about">
+  <div class="container">
+    <h2>Tentang Kami</h2>
+    <p>TeamExplorer berfokus pada pengembangan dan inovasi dalam bidang sanitasi air bersih di lingkungan masyarakat. Kami berkomitmen menciptakan solusi efektif, berkelanjutan, dan ramah lingkungan.</p>
+  </div>
+</section>
 
-  <!-- TIM -->
-  <section id="team" class="team">
-    <div class="container">
-      <h2>Tim Kami</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <img src="member1.png" alt="Rani Dewi">
-          <h3>Rani Dewi</h3>
-          <p>Koordinator</p>
-        </div>
-        <div class="team-member">
-          <img src="member2.png" alt="Agus Santoso">
-          <h3>Agus Santoso</h3>
-          <p>Ahli Teknik Air</p>
-        </div>
-        <div class="team-member">
-          <img src="member3.png" alt="Dina Lestari">
-          <h3>Dina Lestari</h3>
-          <p>Desainer Lingkungan</p>
-        </div>
-        <div class="team-member">
-          <img src="member4.png" alt="Bayu Nugraha">
-          <h3>Bayu Nugraha</h3>
-          <p>Teknisi Lapangan</p>
-        </div>
-        <div class="team-member">
-          <img src="member5.png" alt="Lia Putri">
-          <h3>Lia Putri</h3>
-          <p>Peneliti Kimia Air</p>
-        </div>
-        <div class="team-member">
-          <img src="member6.png" alt="Andi Pratama">
-          <h3>Andi Pratama</h3>
-          <p>Dokumentasi & Media</p>
-        </div>
+<!-- Tim -->
+<section id="team" class="team">
+  <div class="container">
+    <h2>Tim Kami</h2>
+    <div class="team-grid">
+      <div class="team-member">
+        <img src="member1.png" alt="Rani Dewi">
+        <h3>Rani Dewi</h3>
+        <p>Koordinator</p>
+      </div>
+      <div class="team-member">
+        <img src="member2.png" alt="Agus Santoso">
+        <h3>Agus Santoso</h3>
+        <p>Ahli Teknik Air</p>
+      </div>
+      <div class="team-member">
+        <img src="member3.png" alt="Dina Lestari">
+        <h3>Dina Lestari</h3>
+        <p>Desainer Lingkungan</p>
+      </div>
+      <div class="team-member">
+        <img src="member4.png" alt="Bayu Nugraha">
+        <h3>Bayu Nugraha</h3>
+        <p>Teknisi Lapangan</p>
+      </div>
+      <div class="team-member">
+        <img src="member5.png" alt="Lia Putri">
+        <h3>Lia Putri</h3>
+        <p>Peneliti Kimia Air</p>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROGRAM KERJA -->
-  <section id="projects" class="projects">
-    <div class="container">
-      <h2>Program Kerja Kami</h2>
-      <div class="project-grid">
-        <div class="project-card">
-          <h3>1. Eksplorasi Sumber Air Baru</h3>
-          <p>Mendeteksi dan meneliti potensi sumber air bersih di daerah terpencil untuk pemenuhan kebutuhan masyarakat.</p>
-        </div>
-        <div class="project-card">
-          <h3>2. Inovasi Sistem Filtrasi Air</h3>
-          <p>Mengembangkan teknologi penyaringan air murah dan efisien untuk rumah tangga.</p>
-        </div>
-        <div class="project-card">
-          <h3>3. Edukasi Sanitasi Masyarakat</h3>
-          <p>Memberikan pelatihan kepada masyarakat tentang sanitasi air dan kebersihan lingkungan.</p>
-        </div>
-        <div class="project-card">
-          <h3>4. Program “Desa Bersih Air”</h3>
-          <p>Kolaborasi dengan pemerintah desa untuk menciptakan lingkungan sehat dan akses air layak.</p>
-        </div>
-      </div>
+<!-- Program Kerja -->
+<section id="projects" class="projects">
+  <div class="container">
+    <h2>Program Kerja Kami</h2>
+    <div class="project-card">
+      <h3>1. Eksplorasi Sumber Air Baru</h3>
+      <p>Mendeteksi dan meneliti potensi sumber air bersih di daerah terpencil untuk pemenuhan kebutuhan masyarakat.</p>
     </div>
-  </section>
+    <div class="project-card">
+      <h3>2. Inovasi Sistem Filtrasi Air</h3>
+      <p>Mengembangkan teknologi penyaringan air murah dan efisien untuk rumah tangga.</p>
+    </div>
+    <div class="project-card">
+      <h3>3. Edukasi Sanitasi Masyarakat</h3>
+      <p>Memberikan pelatihan kepada masyarakat tentang sanitasi air dan kebersihan lingkungan.</p>
+    </div>
+    <div class="project-card">
+      <h3>4. Program “Desa Bersih Air”</h3>
+      <p>Kolaborasi dengan pemerintah desa untuk menciptakan lingkungan sehat dan akses air layak.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- FOOTER -->
-  <footer id="contact">
-    <div class="container footer-content">
-      <div class="footer-section">
-        <h3>Tentang TeamExplorer</h3>
-        <p>Komunitas yang bergerak di bidang eksplorasi dan pengelolaan air bersih berkelanjutan.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Kontak</h3>
-        <p>Email: teamexplorer@gmail.com</p>
-        <p>Telp: +62 812 3456 7890</p>
-      </div>
-      <div class="footer-section">
-        <h3>Media Sosial</h3>
-        <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
-      </div>
+<!-- Footer -->
+<footer id="contact">
+  <div class="container footer-content">
+    <div class="footer-section">
+      <h3>Tentang TeamExplorer</h3>
+      <p>Komunitas yang bergerak di bidang eksplorasi dan pengelolaan air bersih berkelanjutan.</p>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2025 TeamExplorer. Semua Hak Dilindungi.</p>
+    <div class="footer-section">
+      <h3>Kontak</h3>
+      <p>Email: teamexplorer@gmail.com</p>
+      <p>Telp: +62 812 3456 7890</p>
     </div>
-  </footer>
+    <div class="footer-section">
+      <h3>Media Sosial</h3>
+      <p><a href="#">Instagram</a> | <a href="#">Facebook</a></p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 TeamExplorer. Semua Hak Dilindungi.</p>
+  </div>
+</footer>
 
 </body>
 </html>
